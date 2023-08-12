@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Comment from './Comment';
 
 const Comments = props => {
@@ -8,6 +8,9 @@ const Comments = props => {
   return (
     <div className='comments-wrapper'>
       {/* map through the comments prop and render a Comment for every piece of data */}
+      {
+        comments.map(cmt => <Comment comment={cmt} key={cmt.id} />)
+      }
     </div>
   );
 };
